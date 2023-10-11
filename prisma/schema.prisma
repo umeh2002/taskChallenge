@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model authService{
+  id String @id @default(uuid())
+
+  name String
+  password String
+  email String @unique
+
+  verified Boolean @default(false)
+  token String?
+
+  avatar String? 
+  avatarURL String?
+
+  task taskService []
+
+  createdAt DateTime @default(now())
+}
+
+
+model taskService {
+  id String @id @default(uuid())
+
+  name String?
+  priority String
+  taskName String
+  avatar String?
+
+  createdAt DateTime @default(now())
+
+ 
+  user   authService @relation(fields: [userID], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userID String
+
+}
