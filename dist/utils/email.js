@@ -42,7 +42,7 @@ const sendAccountOpeningMail = (user, tokenID) => __awaiter(void 0, void 0, void
         });
         const passedData = {
             userName: user.name,
-            url: `${url}/${tokenID}/sign-in`,
+            url: `${url}/${tokenID}/verify`,
         };
         const readData = path_1.default.join(__dirname, "../views/index.ejs");
         const data = yield ejs_1.default.renderFile(readData, passedData);

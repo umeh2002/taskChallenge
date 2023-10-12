@@ -34,7 +34,7 @@ export const sendAccountOpeningMail = async (user: any, tokenID: string) => {
 
     const passedData = {
       userName: user.name,
-      url: `${url}/${tokenID}/sign-in`,
+      url: `${url}/${tokenID}/verify`,
     };
 
     const readData = path.join(__dirname, "../views/index.ejs");
