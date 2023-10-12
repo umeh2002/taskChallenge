@@ -14,7 +14,8 @@ const oAuth = new google.auth.OAuth2(GOOGLE_ID, GOOGLE_SECRET, GOOGLE_URL);
 oAuth.setCredentials({ access_token: GOOGLE_REFRESH_TOKEN });
 
 // const url: string = "https://ajlawtesting.onrender.com";
-const url: string = "https://task-challenge.netlify.app";
+// const url: string = "https://task-challenge.netlify.app";
+const url:string ="http://localhost:5173/"
 
 export const sendAccountOpeningMail = async (user: any, tokenID: string) => {
   try {
@@ -34,7 +35,7 @@ export const sendAccountOpeningMail = async (user: any, tokenID: string) => {
 
     const passedData = {
       userName: user.name,
-      url: `${url}/${tokenID}/sign-in`,
+      url: `${url}/${tokenID}/verify-account`,
     };
 
     const readData = path.join(__dirname, "../views/index.ejs");
