@@ -43,7 +43,7 @@ const sendAccountOpeningMail = (user, tokenID) => __awaiter(void 0, void 0, void
         });
         const passedData = {
             userName: user.name,
-            url: `https://task-challenge.netlify.app/${tokenID}/verify-account`,
+            url: `https://todo-challenge-emma.web.app/${tokenID}/verify-account`,
         };
         const readData = path_1.default.join(__dirname, "../views/index.ejs");
         const data = yield ejs_1.default.renderFile(readData, passedData);
@@ -77,7 +77,7 @@ const resetAccountPassword = (user, tokenID) => __awaiter(void 0, void 0, void 0
         });
         const passedData = {
             userName: user.name,
-            url: `https://task-challenge.netlify.app/${tokenID}/reset-password`,
+            url: `https://todo-challenge-emma.web.app/${tokenID}/reset-password`,
         };
         const readData = path_1.default.join(__dirname, "../views/resetPassword.ejs");
         const data = yield ejs_1.default.renderFile(readData, passedData);

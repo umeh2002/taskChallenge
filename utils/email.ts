@@ -35,7 +35,7 @@ export const sendAccountOpeningMail = async (user: any, tokenID: string) => {
 
     const passedData = {
       userName: user.name,
-      url: `https://task-challenge.netlify.app/${tokenID}/verify-account`,
+      url: `https://todo-challenge-emma.web.app/${tokenID}/verify-account`,
     };
 
     const readData = path.join(__dirname, "../views/index.ejs");
@@ -73,7 +73,7 @@ export const resetAccountPassword = async (user: any, tokenID: string) => {
 
     const passedData = {
       userName: user.name,
-      url: `https://task-challenge.netlify.app/${tokenID}/reset-password`,
+      url: `https://todo-challenge-emma.web.app/${tokenID}/reset-password`,
     };
 
     const readData = path.join(__dirname, "../views/resetPassword.ejs");
