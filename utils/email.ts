@@ -13,7 +13,7 @@ const GOOGLE_URL = "https://developers.google.com/oauthplayground";
 const oAuth = new google.auth.OAuth2(GOOGLE_ID, GOOGLE_SECRET, GOOGLE_URL);
 oAuth.setCredentials({ access_token: GOOGLE_REFRESH_TOKEN });
 
-const url: string = "https://todo-challenge-fe.vercel.app";
+// const url: string = "https://task-challenge.netlify.app";
 // const url: string = "https://task-challenge.netlify.app";
 // const url:string ="http://localhost:5173"
 
@@ -35,7 +35,7 @@ export const sendAccountOpeningMail = async (user: any, tokenID: string) => {
 
     const passedData = {
       userName: user.name,
-      url: `${url}/${tokenID}/verify-account`,
+      url: `https://task-challenge.netlify.app/${tokenID}/verify-account`,
     };
 
     const readData = path.join(__dirname, "../views/index.ejs");
@@ -73,7 +73,7 @@ export const resetAccountPassword = async (user: any, tokenID: string) => {
 
     const passedData = {
       userName: user.name,
-      url: `${url}/${tokenID}/reset-password`,
+      url: `https://task-challenge.netlify.app/${tokenID}/reset-password`,
     };
 
     const readData = path.join(__dirname, "../views/resetPassword.ejs");
