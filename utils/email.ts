@@ -14,7 +14,7 @@ const oAuth = new google.auth.OAuth2(GOOGLE_ID, GOOGLE_SECRET, GOOGLE_URL);
 oAuth.setCredentials({ access_token: GOOGLE_REFRESH_TOKEN });
 
 // const url: string = "https://ajlawtesting.onrender.com";
-const url: string = "http://localhost:2928/";
+const url: string = "https://task-challenge-fe.vercel.app/";
 
 export const sendAccountOpeningMail = async (user: any, tokenID: string) => {
   try {
@@ -34,7 +34,7 @@ export const sendAccountOpeningMail = async (user: any, tokenID: string) => {
 
     const passedData = {
       userName: user.name,
-      url: `${url}/api/${tokenID}/verify`,
+      url: `${url}/${tokenID}/sign-in`,
     };
 
     const readData = path.join(__dirname, "../views/index.ejs");
@@ -72,7 +72,7 @@ export const resetAccountPassword = async (user: any, tokenID: string) => {
 
     const passedData = {
       userName: user.name,
-      url: `${url}/api/${tokenID}/reset-password`,
+      url: `${url}/${tokenID}/reset-password`,
     };
 
     const readData = path.join(__dirname, "../views/resetPassword.ejs");

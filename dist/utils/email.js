@@ -25,7 +25,7 @@ const GOOGLE_URL = "https://developers.google.com/oauthplayground";
 const oAuth = new googleapis_1.google.auth.OAuth2(GOOGLE_ID, GOOGLE_SECRET, GOOGLE_URL);
 oAuth.setCredentials({ access_token: GOOGLE_REFRESH_TOKEN });
 // const url: string = "https://ajlawtesting.onrender.com";
-const url = "http://localhost:2928/";
+const url = "https://task-challenge-fe.vercel.app/";
 const sendAccountOpeningMail = (user, tokenID) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const getAccess = (yield oAuth.getAccessToken()).token;
@@ -42,7 +42,7 @@ const sendAccountOpeningMail = (user, tokenID) => __awaiter(void 0, void 0, void
         });
         const passedData = {
             userName: user.name,
-            url: `${url}/api/${tokenID}/verify`,
+            url: `${url}/${tokenID}/sign-in`,
         };
         const readData = path_1.default.join(__dirname, "../views/index.ejs");
         const data = yield ejs_1.default.renderFile(readData, passedData);
@@ -76,7 +76,7 @@ const resetAccountPassword = (user, tokenID) => __awaiter(void 0, void 0, void 0
         });
         const passedData = {
             userName: user.name,
-            url: `${url}/api/${tokenID}/reset-password`,
+            url: `${url}/${tokenID}/reset-password`,
         };
         const readData = path_1.default.join(__dirname, "../views/resetPassword.ejs");
         const data = yield ejs_1.default.renderFile(readData, passedData);
