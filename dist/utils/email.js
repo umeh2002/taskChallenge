@@ -26,7 +26,7 @@ const oAuth = new googleapis_1.google.auth.OAuth2(GOOGLE_ID, GOOGLE_SECRET, GOOG
 oAuth.setCredentials({ access_token: GOOGLE_REFRESH_TOKEN });
 // const url: string = "https://ajlawtesting.onrender.com";
 // const url: string = "https://task-challenge.netlify.app";
-const url = "http://localhost:5173/";
+const url = "http://localhost:5173";
 const sendAccountOpeningMail = (user, tokenID) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const getAccess = (yield oAuth.getAccessToken()).token;

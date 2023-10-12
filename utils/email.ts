@@ -15,7 +15,7 @@ oAuth.setCredentials({ access_token: GOOGLE_REFRESH_TOKEN });
 
 // const url: string = "https://ajlawtesting.onrender.com";
 // const url: string = "https://task-challenge.netlify.app";
-const url:string ="http://localhost:5173/"
+const url:string ="http://localhost:5173"
 
 export const sendAccountOpeningMail = async (user: any, tokenID: string) => {
   try {
