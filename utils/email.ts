@@ -14,7 +14,7 @@ const oAuth = new google.auth.OAuth2(GOOGLE_ID, GOOGLE_SECRET, GOOGLE_URL);
 oAuth.setCredentials({ access_token: GOOGLE_REFRESH_TOKEN });
 
 // const url: string = "https://ajlawtesting.onrender.com";
-const url: string = "https://todo-challenge-fe.vercel.app/";
+const url: string = "https://todo-challenge-fe.vercel.app";
 
 export const sendAccountOpeningMail = async (user: any, tokenID: string) => {
   try {
