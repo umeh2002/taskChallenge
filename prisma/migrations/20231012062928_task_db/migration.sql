@@ -1,13 +1,13 @@
 -- CreateTable
 CREATE TABLE "authService" (
-    "id" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
-    "verified" BOOLEAN NOT NULL DEFAULT false,
-    "token" TEXT,
-    "avatar" TEXT,
-    "avatarURL" TEXT,
+    "id" STRING NOT NULL,
+    "name" STRING NOT NULL,
+    "password" STRING NOT NULL,
+    "email" STRING NOT NULL,
+    "verified" BOOL NOT NULL DEFAULT false,
+    "token" STRING,
+    "avatar" STRING,
+    "avatarURL" STRING,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "authService_pkey" PRIMARY KEY ("id")
@@ -15,13 +15,13 @@ CREATE TABLE "authService" (
 
 -- CreateTable
 CREATE TABLE "taskService" (
-    "id" TEXT NOT NULL,
-    "name" TEXT,
-    "priority" TEXT NOT NULL,
-    "taskName" TEXT NOT NULL,
-    "avatar" TEXT,
+    "id" STRING NOT NULL,
+    "name" STRING,
+    "priority" STRING NOT NULL,
+    "taskName" STRING NOT NULL,
+    "avatar" STRING,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "userID" TEXT NOT NULL,
+    "userID" STRING NOT NULL,
 
     CONSTRAINT "taskService_pkey" PRIMARY KEY ("id")
 );
